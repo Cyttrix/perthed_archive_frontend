@@ -1,0 +1,43 @@
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+li {
+  font-size: 1.25rem;
+}
+
+.navBar {
+  background: rgb(0, 0, 85);
+  box-shadow: 4px 2px 5px gray;
+  color: rgb(42, 235, 170);
+  margin-bottom: 2rem;
+}
+
+.navBar button {
+  background: transparent;
+  color: rgb(42, 235, 170);
+  padding: 0.4rem 0.5rem;
+}
+
+.navBar button:hover {
+  background: rgb(42, 235, 170);
+  color: black;
+  cursor: pointer;
+}
+
+.brand {
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 1.5rem 2rem;
+}
+
+.centerbrand {
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 1.5rem 2rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
