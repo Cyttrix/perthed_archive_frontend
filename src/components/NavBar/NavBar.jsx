@@ -51,7 +51,7 @@ const Navbar = () => {
           varient="text"
           onClick={(e) => {
             e.preventDefault();
-            window.location.href='http://localhost:3001/profile'
+            window.location.href=`http://localhost:3001/${user.userName}`
           }}
           >Profile</Button>
         </li>

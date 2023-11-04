@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import BrowsePage from "./pages/BrowsePage/BrowsePage";
 import MovieListPage from "./pages/MovieListPage/MovieListPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import MediaDetailsPage from "./pages/MediaDetailsPage/MediaDetailsPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -49,11 +50,20 @@ function App() {
           }
         />
         <Route
-          path="/profile"
+          path="/:user"
           element={
             <PrivateRoute>
               <Navbar />
               <ProfilePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path=":mediaTitle/:mediaId"
+          element={
+            <PrivateRoute>
+              <Navbar />
+              <MediaDetailsPage />
             </PrivateRoute>
           }
         />

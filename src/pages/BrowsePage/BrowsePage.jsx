@@ -9,18 +9,19 @@ const BrowsePage = () => {
    const [searchTerm, setSearchTerm] = useState("");
    const [searchResults, setSearchResults] = useState([]);
 
-  const fetchMoviesByTitle = async () => {
+  const fetchMedia = async () => {
     try {
-        const token = '';
 
+        const token = "";
+        
         const config = {
             headers: {Authorization: `Bearer ${token}` },
         };
 
         let lowerCaseSearch = searchTerm.toLowerCase();
-        let response = await axios.get(`https://api4.thetvdb.com/v4/search?query=${lowerCaseSearch}`, config);
-        console.log(response.data);
-        setSearchResults(response.data);
+        let response = await axios.get(`https://api4.thetvdb.com/v4/search?query=${lowerCaseSearch}&type=movie`, config);
+        console.log(response.data.data);
+        setSearchResults(response.data.data);
     } catch (error) {
         console.log("Error in fetchMoviesByTitle: ", error);
     }
@@ -29,7 +30,7 @@ const BrowsePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(searchTerm);
-    fetchMoviesByTitle();
+    fetchMedia();
   }
     
     return (
@@ -40,7 +41,7 @@ const BrowsePage = () => {
                 setSearchTerm={setSearchTerm}
                 handleSubmit={handleSubmit}
                 />
-                <ResultsList />
+                <ResultsList searchResults={searchResults}/>
         </div>
     );
 };
