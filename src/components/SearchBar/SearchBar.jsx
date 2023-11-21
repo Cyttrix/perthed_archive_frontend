@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
+import { Button } from "@mui/material";
 
 const SearchBar = ({ searchTerm = "", setSearchTerm, handleSubmit }) => {
     return (
@@ -8,7 +9,7 @@ const SearchBar = ({ searchTerm = "", setSearchTerm, handleSubmit }) => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)} 
         />
-            <button type="submit">Search</button>
+            <Button varient="contained" type="submit" color="success">Search</Button>
         </form>
     );
 };

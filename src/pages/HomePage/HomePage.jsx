@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import "../HomePage/HomePage.css";
+import LikeButton from "../../components/LikeButton/LikeButton";
 
 import axios from "axios";
 
@@ -16,11 +18,10 @@ const HomePage = () => {
 
   const fetchPosts = async () => {
     try {
-      let response = await axios.get("https://localhost:5001/api/posts", {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
+      let response = await axios.get("https://localhost:5001/api/post", {
+        
       });
+      console.log(response.data);
       setPosts(response.data);
     } catch (error) {
       console.log(error.response.data);
@@ -28,14 +29,17 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container">
+    <div style={{marginLeft:40}}>
       {console.log(user)}
       <h1>Welcome {user.userName}!</h1>
-      {posts &&
-        posts.map((post) => (
-          <p key={post.id}>
-            {post.text} {post.likeCounter}
-          </p>
+      <h2 style={{marginTop:20, marginBottom:20}}>Activity Feed</h2>
+      {posts.reverse().map((post) => (
+          <div className="postborder" key={post.id}>
+            <div>
+             {post.userName} {post.text} {post.mediaTitle}
+             </div>
+             <LikeButton/>
+          </div>
         ))}
     </div>
   );

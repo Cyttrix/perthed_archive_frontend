@@ -1,0 +1,23 @@
+.MoviesListPage {
+    background: rgb(38, 38, 138)
+}
+
+.body {
+    color: white;
+}
+
+.MovieListPage button:hover {
+    background: red;
+    color: black;
+    cursor: pointer;
+  }
+
+  .table, td, th {
+    border:1px solid #ddd;
+    text-align: center;
+
+  }
+
+  .th, td {
+    padding: 15px;
+  }

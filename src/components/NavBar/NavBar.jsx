@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
 import { Button } from "@mui/material";
+import NavBarIcon from "../../assets/PA_Logo.png";
 
 
 
@@ -18,9 +19,11 @@ const Navbar = () => {
       <ul>
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "rgb(42, 235, 170)" }}>
-            <b>Perthed Archive</b>
+            <img src={NavBarIcon} width={100} height={60} />
           </Link>
+          
         </li>
+       
         
         <li className="centerbrand">
         <Button 

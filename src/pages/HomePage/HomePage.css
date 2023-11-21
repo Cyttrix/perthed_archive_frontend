@@ -1,0 +1,7 @@
+.postborder {
+    border-left: 6px solid white;
+    background-color: rgb(0, 0, 85);;
+    height: 100px;
+    width: 50%;
+    margin-bottom: 30px;
+}
